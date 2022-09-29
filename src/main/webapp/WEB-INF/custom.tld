@@ -1,0 +1,19 @@
+<taglib>
+    <description>Example Tag Library</description>
+    <tlib-version>4.0</tlib-version>
+    <short-name>example</short-name>
+    <uri>/WEB-INF/custom.tld</uri>
+    <jsp-version>1</jsp-version>
+
+    <tag>
+        <name>Hello</name>
+        <tag-class>com.example.demojsp.tags.HelloTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
+    <tag>
+        <name>Name</name>
+        <tag-class>com.example.demojsp.tags.NameTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+</taglib>

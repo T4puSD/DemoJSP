@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="cs" uri="/WEB-INF/custom.tld"%>
 <html>
 <head>
     <title>Home Page</title>
@@ -22,5 +23,12 @@ ${redirectName}
     <br>
     FamilyName: ${fname.familyName}
 </c:if>
+
+<cs:Hello/>
+
+<br />
+
+<cs:Name/>
+I won't tell you!!!
 </body>
 </html>

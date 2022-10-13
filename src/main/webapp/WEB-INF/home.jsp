@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="cs" uri="/WEB-INF/custom.tld"%>
+<%@taglib prefix="tags" tagdir="/WEB-INF/tags"%>
 <html>
 <head>
     <title>Home Page</title>
@@ -30,5 +31,7 @@ ${redirectName}
 
 <cs:Name/>
 I won't tell you!!!
+
+<tags:navbar/>
 </body>
 </html>

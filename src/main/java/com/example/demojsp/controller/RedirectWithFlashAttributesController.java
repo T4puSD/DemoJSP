@@ -1,5 +1,6 @@
 package com.example.demojsp.controller;
 
+import com.example.demojsp.config.SecurityUtils;
 import com.example.demojsp.context.UserContext;
 import com.example.demojsp.domain.User;
 import com.example.demojsp.model.Name;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Controller
 public class RedirectWithFlashAttributesController {
@@ -27,7 +29,7 @@ public class RedirectWithFlashAttributesController {
         objectMap.put("name2", "Static Name");
         objectMap.put("name3", "Static Name2");
         objectMap.put("fname", new Name("Tapu", "Sutradhar"));
-        return new ModelAndView("home").addObject("name", name).addAllObjects(objectMap);
+        return new ModelAndView("jsp/home").addObject("name", name).addAllObjects(objectMap);
     }
 
     @GetMapping("/home2")
@@ -46,6 +48,13 @@ public class RedirectWithFlashAttributesController {
                 .orElse(null);
         System.out.println(user1.getRoles());
         return new ModelAndView("home").addObject("name",user1.getEmail());
+    }
+
+    @GetMapping("/home4")
+    public ModelAndView home4UserContextTestPatchTypeWorking(HttpSession httpSession) {
+        Optional<User> userOp = SecurityUtils.getUser();
+        User user = userOp.get();
+        return new ModelAndView("home").addObject("name",user.getEmail());
     }
 
     @GetMapping("/next")

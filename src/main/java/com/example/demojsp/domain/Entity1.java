@@ -1,6 +1,5 @@
 package com.example.demojsp.domain;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -12,10 +11,10 @@ public class Entity1 implements Serializable {
     private Long id;
     private String name;
 
-    @OneToOne(mappedBy = "entity1", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "entity1")
     private Entity2 entity2;
 
-    @OneToOne(mappedBy = "entity1", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "entity1")
     private Entity3 entity3;
 
     public Long getId() {

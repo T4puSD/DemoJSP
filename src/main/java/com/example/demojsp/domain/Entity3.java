@@ -15,7 +15,7 @@ public class Entity3 implements Serializable {
     private String value;
 
     @MapsId
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne
     @JoinColumn(name = "id")
     private Entity1 entity1;
 

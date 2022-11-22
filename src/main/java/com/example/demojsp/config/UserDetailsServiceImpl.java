@@ -31,7 +31,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .orElseThrow(() -> {
                     throw new IllegalArgumentException("User not found with provided username:" + username);
                 });
-        return new org.springframework.security.core.userdetails.User(username, user.getPwd(), getGrantedAuthority(user));
+        return new CustomUserDetails(username, user.getPwd(), getGrantedAuthority(user))
+                .setUser(user);
     }
 
     private List<SimpleGrantedAuthority> getGrantedAuthority(User user) {
